@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 
 const StyledHeader = styled.header`
-  background: green;
+  background: #7acf47;
 `
 const StyledIcon = styled.img`
   width: 30px;
