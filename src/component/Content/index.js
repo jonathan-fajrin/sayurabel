@@ -9,7 +9,6 @@ const Container = styled.div`
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 60vw;
 `
 class Content extends Component {
   render() {
