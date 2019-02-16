@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 const StyledHeader = styled.header`
   background: #7acf47;
@@ -24,8 +25,12 @@ class Header extends Component {
     return (
       <StyledHeader>
         <StyledContainer>
-          <div>Sayurabel</div>
-          <StyledIcon src="/assets/cart.png" />
+          <Link to="/">
+            <div>Sayurabel</div>
+          </Link>
+          <Link to="/checkout">
+            <StyledIcon src="/assets/cart.png" />
+          </Link>
         </StyledContainer>
       </StyledHeader>
     )
