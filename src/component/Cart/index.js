@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ProductCart from '../ProductCart'
 import styled from 'styled-components'
 const Container = styled.div`
   text-align: center;
@@ -8,13 +9,48 @@ const Container = styled.div`
   background-size: cover;
   display: flex;
   flex-direction: column;
-  height: 80vh;
 `
-
-class Cart extends Component {
+class Content extends Component {
+  constructor() {
+    super()
+    this.state = {
+      data: [
+        {
+          id: 1,
+          name: 'tomato',
+          image: '/assets/tomato.jpg',
+          price: 12000
+        },
+        {
+          id: 2,
+          name: 'potato',
+          image: '/assets/potato.png',
+          price: 12000
+        },
+        {
+          id: 3,
+          name: 'orange',
+          image: '/assets/orange.jpg',
+          price: 12000
+        }
+      ],
+      cart: [
+        {
+          id: 3,
+          name: 'orange',
+          image: '/assets/orange.jpg',
+          price: 12000
+        }
+      ]
+    }
+  }
   render() {
-    return <Container>Cart Component</Container>
+    return (
+      <Container>
+        <ProductCart test={this.state.data} />
+      </Container>
+    )
   }
 }
 
-export default Cart
+export default Content

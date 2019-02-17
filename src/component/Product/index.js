@@ -14,6 +14,18 @@ const StyledImg = styled.img`
   list-style: none;
   margin-top: 20px;
 `
+const StyledIcon = styled.img`
+  width: 30px;
+  height: 20px;
+`
+const StyledProduct = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 10px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+`
 
 class Product extends Component {
   render() {
@@ -22,11 +34,19 @@ class Product extends Component {
         <div>
           <StyledImg src={this.props.product.image} />
         </div>
-        <div>
-          <p>{this.props.product.name}</p>
-        </div>
-        <div>
+        <StyledProduct>
+          {this.props.product.name}
           <p>{this.props.product.price}</p>
+          <button
+            onClick={() => {
+              this.props.add(this.props.product.id)
+            }}
+          >
+            <StyledIcon src="/assets/cart.png" />
+          </button>
+        </StyledProduct>
+        <div>
+          <p />
         </div>
       </StyledLI>
     )

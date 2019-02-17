@@ -3,7 +3,7 @@ import Header from './component/Header'
 import Content from './component/Content'
 import Footer from './component/Footer'
 import Cart from './component/Cart'
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 class App extends Component {
   render() {
