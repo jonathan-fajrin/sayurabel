@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
-import ProductCart from '../ProductCart'
 import styled from 'styled-components'
+
+import ProductCart from '../../component/ProductCart'
+
 const Container = styled.div`
   text-align: center;
   margin: 0 auto;
@@ -10,6 +12,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
 `
+
 class Content extends Component {
   constructor() {
     super()
