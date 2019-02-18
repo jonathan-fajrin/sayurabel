@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 const StyledLI = styled.li`
@@ -24,7 +25,7 @@ class ProductCart extends Component {
 
     return (
       <ul>
-        {this.props.Data.map((product, index) => {
+        {this.props.cart.map((product, index) => {
           number += 1
 
           return (
@@ -38,7 +39,7 @@ class ProductCart extends Component {
                     currency: 'CAD'
                   }).format(product.price)}
                 </p>
-                <p>{product.item}</p>
+                <p>{product.quantity}</p>
                 <p>
                   {new Intl.NumberFormat('CAD', {
                     style: 'currency',
@@ -54,4 +55,10 @@ class ProductCart extends Component {
   }
 }
 
-export default ProductCart
+const mapStateToProps = state => {
+  return {
+    cart: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(ProductCart)

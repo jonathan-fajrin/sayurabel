@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import styled from 'styled-components'
 
 const StyledLI = styled.li`
@@ -32,6 +33,12 @@ const StyledProduct = styled.div`
 
 class Product extends Component {
   render() {
+    const productPrice = new Intl.NumberFormat('CAD', {
+      maximumSignificantDigits: 3,
+      style: 'currency',
+      currency: 'CAD'
+    }).format(this.props.product.price)
+
     return (
       <StyledLI>
         <div>
@@ -40,16 +47,20 @@ class Product extends Component {
         <StyledProduct>
           {this.props.product.name[0].toUpperCase() +
             this.props.product.name.substr(1)}
-          <p>
-            {new Intl.NumberFormat('CAD', {
-              maximumSignificantDigits: 3,
-              style: 'currency',
-              currency: 'CAD'
-            }).format(this.props.product.price)}
-          </p>
+          <p>{productPrice}</p>
           <button
             onClick={() => {
-              this.props.addCart(this.props.product.id)
+              // before using redux
+              // this.props.addCart(this.props.product.id)
+
+              // after using redux
+              const action = {
+                type: 'ADD_PRODUCT_TO_CART',
+                payload: {
+                  id: this.props.product.id
+                }
+              }
+              this.props.dispatch(action)
             }}
           >
             <StyledIcon src="/assets/cart.png" />
@@ -63,4 +74,10 @@ class Product extends Component {
   }
 }
 
-export default Product
+const mapStateToProps = state => {
+  return {
+    state
+  }
+}
+
+export default connect(mapStateToProps)(Product)

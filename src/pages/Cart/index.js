@@ -13,37 +13,14 @@ const Container = styled.div`
   flex-direction: column;
 `
 
-class Content extends Component {
-  constructor() {
-    super()
-    this.state = {
-      cart: [
-        {
-          id: 3,
-          name: 'orange',
-          image: '/assets/orange.jpg',
-          price: 15,
-          totalPrice: 30,
-          item: 2
-        },
-        {
-          id: 2,
-          name: 'potato',
-          image: '/assets/potato.png',
-          price: 10,
-          totalPrice: 20,
-          item: 2
-        }
-      ]
-    }
-  }
+class Cart extends Component {
   render() {
     return (
       <Container>
-        <ProductCart Data={this.state.cart} />
+        <ProductCart />
       </Container>
     )
   }
 }
 
-export default Content
+export default Cart
