@@ -35,8 +35,15 @@ class Product extends Component {
           <StyledImg src={this.props.product.image} />
         </div>
         <StyledProduct>
-          {this.props.product.name}
-          <p>{this.props.product.price}</p>
+          {this.props.product.name[0].toUpperCase() +
+            this.props.product.name.substr(1)}
+          <p>
+            {new Intl.NumberFormat('CAD', {
+              maximumSignificantDigits: 3,
+              style: 'currency',
+              currency: 'CAD'
+            }).format(this.props.product.price)}
+          </p>
           <button
             onClick={() => {
               this.props.add(this.props.product.id)

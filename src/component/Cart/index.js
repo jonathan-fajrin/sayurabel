@@ -19,19 +19,19 @@ class Content extends Component {
           id: 1,
           name: 'tomato',
           image: '/assets/tomato.jpg',
-          price: 12000
+          price: 12
         },
         {
           id: 2,
           name: 'potato',
           image: '/assets/potato.png',
-          price: 12000
+          price: 10
         },
         {
           id: 3,
           name: 'orange',
           image: '/assets/orange.jpg',
-          price: 12000
+          price: 13
         }
       ],
       cart: [
@@ -39,7 +39,17 @@ class Content extends Component {
           id: 3,
           name: 'orange',
           image: '/assets/orange.jpg',
-          price: 12000
+          price: 15,
+          totalPrice: 30,
+          item: 2
+        },
+        {
+          id: 2,
+          name: 'potato',
+          image: '/assets/potato.png',
+          price: 10,
+          totalPrice: 20,
+          item: 2
         }
       ]
     }
@@ -47,7 +57,7 @@ class Content extends Component {
   render() {
     return (
       <Container>
-        <ProductCart test={this.state.data} />
+        <ProductCart Data={this.state.cart} />
       </Container>
     )
   }

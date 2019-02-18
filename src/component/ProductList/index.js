@@ -10,19 +10,19 @@ class ProductList extends Component {
           id: 1,
           name: 'tomato',
           image: '/assets/tomato.jpg',
-          price: 12000
+          price: 12
         },
         {
           id: 2,
           name: 'potato',
           image: '/assets/potato.png',
-          price: 12000
+          price: 10
         },
         {
           id: 3,
           name: 'orange',
           image: '/assets/orange.jpg',
-          price: 12000
+          price: 13
         }
       ],
       cart: []
@@ -30,19 +30,18 @@ class ProductList extends Component {
   }
   addCart = id => {
     const newData = this.state.data.find(oldData => {
-      // console.log(id)
-
       return oldData.id === id
     })
+    console.log(newData)
 
-    const coba = this.state.cart.concat({
+    const result = this.state.cart.concat({
       id: newData.id,
       name: newData.name,
       image: newData.image,
       price: newData.price
     })
     this.setState({
-      cart: coba
+      cart: result
     })
 
     console.log(this.state.cart)
