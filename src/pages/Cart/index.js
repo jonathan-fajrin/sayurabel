@@ -17,26 +17,6 @@ class Content extends Component {
   constructor() {
     super()
     this.state = {
-      data: [
-        {
-          id: 1,
-          name: 'tomato',
-          image: '/assets/tomato.jpg',
-          price: 12
-        },
-        {
-          id: 2,
-          name: 'potato',
-          image: '/assets/potato.png',
-          price: 10
-        },
-        {
-          id: 3,
-          name: 'orange',
-          image: '/assets/orange.jpg',
-          price: 13
-        }
-      ],
       cart: [
         {
           id: 3,

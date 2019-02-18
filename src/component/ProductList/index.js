@@ -47,7 +47,9 @@ class ProductList extends Component {
     return (
       <ul>
         {this.state.data.map((product, index) => {
-          return <Product add={this.addCart} product={product} key={index} />
+          return (
+            <Product addCart={this.addCart} product={product} key={index} />
+          )
         })}
       </ul>
     )

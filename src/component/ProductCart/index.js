@@ -8,6 +8,7 @@ const StyledLI = styled.li`
   list-style: none;
   background-color: #7acf47;
 `
+
 const StyledProduct = styled.div`
   display: flex;
   justify-content: space-around;
@@ -19,8 +20,8 @@ const StyledProduct = styled.div`
 
 class ProductCart extends Component {
   render() {
-    console.log(this.props.Data)
     let number = 0
+
     return (
       <ul>
         {this.props.Data.map((product, index) => {
@@ -33,7 +34,6 @@ class ProductCart extends Component {
                 {product.name[0].toUpperCase() + product.name.substr(1)}
                 <p>
                   {new Intl.NumberFormat('CAD', {
-                    maximumSignificantDigits: 3,
                     style: 'currency',
                     currency: 'CAD'
                   }).format(product.price)}
@@ -41,18 +41,11 @@ class ProductCart extends Component {
                 <p>{product.item}</p>
                 <p>
                   {new Intl.NumberFormat('CAD', {
-                    maximumSignificantDigits: 3,
                     style: 'currency',
                     currency: 'CAD'
                   }).format(product.totalPrice)}
                 </p>
-                <button>+</button>
-                <button>-</button>
               </StyledProduct>
-
-              <div>
-                <p />
-              </div>
             </StyledLI>
           )
         })}

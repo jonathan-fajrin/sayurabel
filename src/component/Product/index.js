@@ -8,16 +8,19 @@ const StyledLI = styled.li`
   list-style: none;
   background-color: #7acf47;
 `
+
 const StyledImg = styled.img`
   text-align: center;
   width: 250px;
   list-style: none;
   margin-top: 20px;
 `
+
 const StyledIcon = styled.img`
   width: 30px;
   height: 20px;
 `
+
 const StyledProduct = styled.div`
   display: flex;
   justify-content: space-around;
@@ -46,7 +49,7 @@ class Product extends Component {
           </p>
           <button
             onClick={() => {
-              this.props.add(this.props.product.id)
+              this.props.addCart(this.props.product.id)
             }}
           >
             <StyledIcon src="/assets/cart.png" />
