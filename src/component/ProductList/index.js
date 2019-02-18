@@ -32,7 +32,6 @@ class ProductList extends Component {
     let product = this.state.data.find(product => {
       return product.id === id
     })
-    console.log(product)
     let newCart = this.state.cart.concat(product)
     this.setState({
       cart: newCart,
