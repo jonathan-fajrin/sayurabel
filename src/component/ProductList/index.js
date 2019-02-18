@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import Product from '../Product'
 
 class ProductList extends Component {
@@ -28,23 +29,18 @@ class ProductList extends Component {
       cart: []
     }
   }
-  addCart = id => {
-    const newData = this.state.data.find(oldData => {
-      return oldData.id === id
-    })
-    console.log(newData)
 
-    const result = this.state.cart.concat({
-      id: newData.id,
-      name: newData.name,
-      image: newData.image,
-      price: newData.price
-    })
-    this.setState({
+  addCart = async id => {
+    const newData = this.state.data.find(item => item.id === id)
+    const result = this.state.cart.concat(newData)
+
+    // this is a slow operation, we can use await
+    await this.setState({
       cart: result
     })
 
-    console.log(this.state.cart)
+    // this is a fast operation, we can wait until this.setState() is finished
+    console.log('this.state.cart:', this.state.cart)
   }
 
   render() {

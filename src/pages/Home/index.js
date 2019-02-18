@@ -13,7 +13,7 @@ const Container = styled.div`
   flex-direction: column;
 `
 
-class Content extends Component {
+class Home extends Component {
   render() {
     return (
       <Container>
@@ -23,4 +23,4 @@ class Content extends Component {
   }
 }
 
-export default Content
+export default Home
