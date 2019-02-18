@@ -25,13 +25,28 @@ class ProductList extends Component {
           price: 12000,
         },
       ],
+      cart: [],
     }
   }
+  addtoCart = id => {
+    let product = this.state.data.find(product => {
+      return product.id === id
+    })
+    console.log(product)
+    let newCart = this.state.cart.concat(product)
+    this.setState({
+      cart: newCart,
+    })
+    console.log(this.state.cart)
+  }
+
   render() {
     return (
       <ul>
         {this.state.data.map((product, index) => {
-          return <Product product={product} key={index} />
+          return (
+            <Product product={product} key={index} addtoCart={this.addtoCart} />
+          )
         })}
       </ul>
     )
