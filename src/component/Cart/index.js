@@ -12,8 +12,17 @@ const Container = styled.div`
 `
 
 class Cart extends Component {
+  displayCart = () => {
+    console.log('this is what we have in the cart', this.props.cart)
+  }
+
   render() {
-    return <Container>Cart Component</Container>
+    return (
+      <Container>
+        Cart Component
+        <button onClick={this.displayCart}>Display Cart</button>
+      </Container>
+    )
   }
 }
 
