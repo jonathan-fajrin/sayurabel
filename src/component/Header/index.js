@@ -20,15 +20,22 @@ const StyledContainer = styled.div`
   height: 80px;
 `
 
+const LogoText = styled.span`
+  font-size: 16px;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+`
+
 class Header extends Component {
   render() {
     return (
       <StyledHeader>
         <StyledContainer>
           <Link to="/">
-            <div>Sayurabel</div>
+            <LogoText>Sayurabel</LogoText>
           </Link>
-          <Link to="/checkout">
+          <Link to="/cart">
             <StyledIcon src="/assets/cart.png" />
           </Link>
         </StyledContainer>

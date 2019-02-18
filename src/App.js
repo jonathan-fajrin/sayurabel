@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-import Header from './component/Header'
-import Content from './component/Content'
-import Footer from './component/Footer'
-import Cart from './component/Cart'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+
+import Header from './component/Header'
+import Footer from './component/Footer'
+
+import Home from './pages/Home'
+import Cart from './pages/Cart'
 
 class App extends Component {
   render() {
@@ -12,8 +14,8 @@ class App extends Component {
         <div>
           <Header />
           <Switch>
-            <Route exact path="/" component={Content} />
-            <Route exact path="/Checkout" component={Cart} />
+            <Route exact path="/" component={Home} />
+            <Route exact path="/cart" component={Cart} />
           </Switch>
           <Footer />
         </div>
