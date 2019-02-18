@@ -15,6 +15,11 @@ const StyledImg = styled.img`
   margin-top: 20px;
 `
 
+const StyledIcon = styled.img`
+  width: 30px;
+  height: 20px;
+`
+
 class Product extends Component {
   render() {
     return (
@@ -27,6 +32,13 @@ class Product extends Component {
         </div>
         <div>
           <p>{this.props.product.price}</p>
+          <button
+            onClick={() => {
+              this.props.addtoCart(this.props.product.id)
+            }}
+          >
+            <StyledIcon src="/assets/cart.png" alt="" />
+          </button>
         </div>
       </StyledLI>
     )
